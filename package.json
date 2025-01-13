@@ -1,0 +1,26 @@
+{
+  "name": "alert-api-2",
+  "version": "1.0.0",
+  "description": "ALERT ReST API ver. 2.0",
+  "main": "index.js",
+  "repository": "https://www.github.com/Laoag-City/alert-api-2",
+  "author": "Richard L. Alhama",
+  "license": "MIT",
+  "private": null,
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.4",
+    "nodemailer": "^6.9.16"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "NODE_ENV=development nodemon index.js",
+    "production": "NODE_ENV=production node index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
