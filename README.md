@@ -74,7 +74,7 @@ yarn production
 
 #### User Authentication
 |Endpoint              |	Method |	Description                                                             |
-|----------------------|---------|-0------------------------------------------------------------------------|
+|----------------------|---------|--------------------------------------------------------------------------|
 |/api/auth/register    |	POST   | Registers a new user. Sends a verification email.                        |
 |/api/auth/login       |	POST   | Logs in a user and provides a JWT.                                       |
 |/api/auth/verify-email|  GET    | Verifies the user's email using a token.                                 |
