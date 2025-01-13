@@ -73,11 +73,11 @@ yarn production
 ### API Endpoints
 
 #### User Authentication
-|Endpoint              |	Method |	Description                                    |
-|----------------------|---------|-------------------------------------------------|
-|/api/auth/register    |	POST   |Registers a new user. Sends a verification email.|
-|/api/auth/login       |	POST   |Logs in a user and provides a JWT.               |
-|/api/auth/verify-email|  GET    |Verifies the user's email using a token.         |
+|Endpoint              |	Method |	Description                                                             |
+|----------------------|---------|-0------------------------------------------------------------------------|
+|/api/auth/register    |	POST   | Registers a new user. Sends a verification email.                        |
+|/api/auth/login       |	POST   | Logs in a user and provides a JWT.                                       |
+|/api/auth/verify-email|  GET    | Verifies the user's email using a token.                                 |
 
 #### Alerts Management
 |Endpoint              |	Method |	Description         |	Access                                            |
@@ -96,50 +96,50 @@ yarn production
 |/api/write	           | POST	   | Write-only endpoint using an API key.	API Key  | Public                 |
 
 #### Rate-Limiting Logs
-|Endpoint              |	Method |	Description                                    |	Access
-|----------------------|---------|-------------------------------------------------|------------------------|
-|/api/rate-limit-logs	 | GET	   | Fetches rate-limiting violation logs.	         | Admin Only             |s
+|Endpoint              |	Method      |	Description                                |	Access
+|----------------------|---------     |--------------------------------------------|------------------------|
+|/api/rate-limit-logs	 | GET	        | Fetches rate-limiting violation logs.	     | Admin Only             |
 
 ### Database Models
 
 #### User Model
-|Field                 | Type         |	Description                                | 
-|----------------------|--------------|--------------------------------------------|
-| username             |	String      | Unique username for the user.              |
-| password             |	String      | Hashed password for security.              |
-| role                 |	Enum	      | Role of the user (user or admin).          |
-| mobilenum            |	String	    | User's mobile number.                      | 
-| email                | String	      | User's email address (unique).             |
-| verified	           | Boolean	    | Whether the user's email is verified.      |
-| verificationToken	   | String	      | Token for email verification.              |
+|Field                 | Type         |	Description                                                         | 
+|----------------------|--------------|---------------------------------------------------------------------|
+| username             | String       | Unique username for the user.                                       |
+| password             | String       | Hashed password for security.                                       |
+| role                 | Enum	        | Role of the user (user or admin).                                   |
+| mobilenum            | String	      | User's mobile number.                                               |
+| email                | String	      | User's email address (unique).                                      |
+| verified	           | Boolean	    | Whether the user's email is verified.                               |
+| verificationToken	   | String	      | Token for email verification.                                       |
 
 #### Alert Model
-|Field                 | Type         |	Description                                | 
-|----------------------|--------------|--------------------------------------------|
-| alertservice         | String	      | Name of the alert service.                 |
-| mobilenumber         | String	      | Mobile number associated with the alert.   |
-| latitude	           | Number	      | Latitude of the alert location.            |
-| longitude	           | Number	      | Longitude of the alert location.           |
-| notified             | Boolean	    | Whether the alert was notified.            |
-| responded            | Boolean	    | Whether the alert has been responded to.   |
-| isPrank              | Boolean	    | Whether the alert is a prank.              |
-| createdBy            | ObjectId	    | User who created the alert.                |
+|Field                 | Type         |	Description                                                         |  
+|----------------------|--------------|---------------------------------------------------------------------|
+| alertservice         | String	      | Name of the alert service.                                          |
+| mobilenumber         | String	      | Mobile number associated with the alert.                            |
+| latitude	           | Number	      | Latitude of the alert location.                                     |
+| longitude	           | Number	      | Longitude of the alert location.                                    |
+| notified             | Boolean	    | Whether the alert was notified.                                     |
+| responded            | Boolean	    | Whether the alert has been responded to.                            |
+| isPrank              | Boolean	    | Whether the alert is a prank.                                       |
+| createdBy            | ObjectId	    | User who created the alert.                                         |
 
 #### Audit Model
-|Field                 | Type         |	Description                                | 
-|----------------------|--------------|--------------------------------------------|
-| action	             | String	      | Action performed (CREATE, UPDATE, DELETE). |
-| alertId              | ObjectId	    | ID of the alert associated with the action.|
-| performedBy          | ObjectId	    | User who performed the action.             |
-| timestamp            | Date         | When the action was performed.             |
-| changes              | Object	      | Details of the changes (for updates).      |
+|Field                 | Type         |	Description                                                         |
+|----------------------|--------------|---------------------------------------------------------------------|
+| action	             | String	      | Action performed (CREATE, UPDATE, DELETE).                          |
+| alertId              | ObjectId	    | ID of the alert associated with the action.                         |
+| performedBy          | ObjectId	    | User who performed the action.                                      |
+| timestamp            | Date         | When the action was performed.                                      |
+| changes              | Object	      | Details of the changes (for updates).                               |
 
 #### Rate-Limit Log Model
-|Field                 | Type         |	Description                                | 
-|----------------------|--------------|--------------------------------------------|
-| ip	                 | String       |	IP address of the violator.                |
-| endpoint             | String	      | Endpoint being accessed.                   |
-| timestamp	           | Date	        | When the violation occurred.               |
+|Field                 | Type         |	Description                                                         |
+|----------------------|--------------|---------------------------------------------------------------------|
+| ip	                 | String       |	IP address of the violator.                                         |
+| endpoint             | String	      | Endpoint being accessed.                                            |
+| timestamp	           | Date	        | When the violation occurred.                                        |
 
 ### Testing
 #### Run the Development Server:
